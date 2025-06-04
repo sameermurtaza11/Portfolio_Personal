@@ -1,2 +1,1 @@
-# Portfolio_Personal
-Porfolio Website of Sameer Murtaza
+https://sameermurtaza11.github.io/Portfolio_Personal/
