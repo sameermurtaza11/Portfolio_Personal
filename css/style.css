@@ -405,11 +405,15 @@ ul {
 }
 
 /* ===== Skills ===== */
-.skills-grid {
+.skills-wrap {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 4rem;
-    align-items: center;
+    gap: 2.5rem;
+}
+
+.skills-wrap > .reveal:first-child {
+    text-align: center;
+    max-width: 620px;
+    margin-inline: auto;
 }
 
 .skill-groups {
@@ -432,26 +436,39 @@ ul {
     margin-bottom: .9rem;
 }
 
-.chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .6rem;
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+    gap: 1rem;
 }
 
-.chips li {
-    padding: .4rem .95rem;
-    border-radius: 99px;
-    font-size: .92rem;
-    font-weight: 600;
+.tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+    padding: 1.3rem .5rem 1rem;
     background: var(--bg);
     border: 1px solid var(--border);
-    transition: border-color .2s, color .2s, transform .2s;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+    text-align: center;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
 }
 
-.chips li:hover {
-    border-color: var(--accent-2);
-    color: var(--accent-2);
-    transform: translateY(-2px);
+.tile:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .4);
+}
+
+.tile img,
+.tile span {
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
 }
 
 /* ===== Contact ===== */
@@ -630,7 +647,6 @@ ul {
 @media (max-width: 860px) {
 
     .about-grid,
-    .skills-grid,
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
