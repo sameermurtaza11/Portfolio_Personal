@@ -149,7 +149,7 @@ ul {
     background:
         linear-gradient(90deg, rgba(11, 13, 18, .92) 0%, rgba(11, 13, 18, .6) 60%, rgba(11, 13, 18, .85) 100%),
         linear-gradient(180deg, transparent 70%, var(--bg) 100%),
-        url('../assets/img/hero.jpg') center / cover no-repeat;
+        url('../assets/img/hero.svg') center / cover no-repeat;
 }
 
 .eyebrow {
@@ -348,7 +348,7 @@ ul {
 /* ===== Services ===== */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
 }
 
@@ -412,41 +412,46 @@ ul {
     align-items: center;
 }
 
-.skill-list {
+.skill-groups {
     display: grid;
-    gap: 1.6rem;
+    gap: 1.5rem;
 }
 
-.skill-top {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 600;
-    margin-bottom: .45rem;
-}
-
-.skill-top span:last-child {
-    color: var(--muted);
-}
-
-.bar {
-    height: 10px;
-    border-radius: 99px;
+.skill-group {
     background: var(--surface);
     border: 1px solid var(--border);
-    overflow: hidden;
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
 }
 
-.bar span {
-    display: block;
-    height: 100%;
-    width: 0;
-    border-radius: inherit;
-    background: linear-gradient(90deg, var(--accent), #ff9a3c);
-    transition: width 1.2s cubic-bezier(.22, 1, .36, 1) .2s;
+.skill-group h3 {
+    font-size: .8rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: .9rem;
 }
 
-.skill.visible .bar span {
-    width: var(--level);
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+}
+
+.chips li {
+    padding: .4rem .95rem;
+    border-radius: 99px;
+    font-size: .92rem;
+    font-weight: 600;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    transition: border-color .2s, color .2s, transform .2s;
+}
+
+.chips li:hover {
+    border-color: var(--accent-2);
+    color: var(--accent-2);
+    transform: translateY(-2px);
 }
 
 /* ===== Contact ===== */
@@ -619,9 +624,6 @@ ul {
         animation: none;
     }
 
-    .bar span {
-        transition: none;
-    }
 }
 
 /* ===== Responsive ===== */
