@@ -149,7 +149,7 @@ ul {
     background:
         linear-gradient(90deg, rgba(11, 13, 18, .92) 0%, rgba(11, 13, 18, .6) 60%, rgba(11, 13, 18, .85) 100%),
         linear-gradient(180deg, transparent 70%, var(--bg) 100%),
-        url('../assets/img/hero.jpg') center / cover no-repeat;
+        url('../assets/img/hero.svg') center / cover no-repeat;
 }
 
 .eyebrow {
@@ -348,7 +348,7 @@ ul {
 /* ===== Services ===== */
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
 }
 
@@ -402,6 +402,78 @@ ul {
 
 .card-link:hover i {
     transform: translateX(4px);
+}
+
+/* ===== Projects ===== */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-2);
+    box-shadow: var(--shadow);
+}
+
+.project-thumb {
+    height: 170px;
+    display: grid;
+    place-items: center;
+    font-size: 3.4rem;
+    color: rgba(255, 255, 255, .92);
+}
+
+.thumb-1 { background: linear-gradient(135deg, #ff5a1f, #7c5cff); }
+.thumb-2 { background: linear-gradient(135deg, #19d3c5, #2563eb); }
+.thumb-3 { background: linear-gradient(135deg, #ff9a3c, #e11d74); }
+
+.project-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-body h3 {
+    font-size: 1.15rem;
+    margin-bottom: .5rem;
+}
+
+.project-body p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 1.2rem;
+}
+
+.tags li {
+    font-size: .75rem;
+    font-weight: 600;
+    padding: .2rem .65rem;
+    border-radius: 99px;
+    color: var(--accent-2);
+    background: rgba(25, 211, 197, .1);
+}
+
+.project-body .card-link {
+    margin-top: auto;
 }
 
 /* ===== Skills ===== */
